@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Expense Tracker</string>
+    <string name="unknown_payee">Unknown payee</string>
+
+    <string name="channel_transaction_prompt">Transaction prompts</string>
+    <string name="channel_transaction_prompt_desc">Asks what a detected payment was for. Turning this off means detected transactions wait inside the app instead.</string>
+    <string name="channel_budget_alerts">Budget alerts</string>
+    <string name="channel_budget_alerts_desc">Tells you once when a budget is nearly used up, and again if it is exceeded.</string>
+    <string name="channel_status">Status</string>
+    <string name="channel_status_desc">Quiet confirmations after a transaction is saved.</string>
+
+    <string name="notif_expense_title">%1$s spent</string>
+    <string name="notif_income_title">%1$s received</string>
+    <string name="notif_saved_title">Saved %1$s</string>
+    <string name="notif_prompt_question">What was this for?</string>
+    <string name="notif_prompt_body">%1$s · %2$s\n\nTap a category, or open to add a description.</string>
+    <string name="notif_action_more">More…</string>
+
+    <string name="budget_exceeded_title">%1$s budget exceeded</string>
+    <string name="budget_near_title">%1$s budget almost used</string>
+    <string name="budget_alert_body">%1$s of %2$s used (%3$d%%)</string>
+
+    <string name="widget_label">Quick Add</string>
+    <string name="widget_description">Record a payment in one tap.</string>
+    <string name="tile_label">Add expense</string>
+</resources>

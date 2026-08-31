@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Long-press the launcher icon to record a payment without opening the app. -->
+    <shortcut
+        android:shortcutId="quick_add"
+        android:enabled="true"
+        android:icon="@drawable/ic_add_expense"
+        android:shortcutShortLabel="@string/tile_label"
+        android:shortcutLongLabel="@string/widget_description">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.rudra.expensetracker"
+            android:targetClass="com.rudra.expensetracker.ui.quickadd.QuickAddActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+</shortcuts>
