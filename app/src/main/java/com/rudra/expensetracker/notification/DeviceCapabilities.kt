@@ -35,7 +35,7 @@ class DeviceCapabilities @Inject constructor(
      * why this is a runtime check and not a version constant.
      */
     val supportsLiveUpdates: Boolean
-        get() = Build.VERSION.SDK_INT >= API_ANDROID_16 &&
+        get() = Build.VERSION.SDK_INT >= 36 &&
             runCatching { notificationManager?.canPostPromotedNotifications() == true }
                 .getOrDefault(false)
 
@@ -71,7 +71,7 @@ class DeviceCapabilities @Inject constructor(
      * whether the launcher or lock screen offers it is the system's decision.
      */
     val supportsLockScreenWidgets: Boolean
-        get() = Build.VERSION.SDK_INT >= API_ANDROID_16 || isSamsung
+        get() = Build.VERSION.SDK_INT >= 36 || isSamsung
 
     val canPostNotifications: Boolean
         get() = notificationManager?.areNotificationsEnabled() == true
@@ -80,7 +80,6 @@ class DeviceCapabilities @Inject constructor(
         get() = context.packageManager.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)
 
     private companion object {
-        const val API_ANDROID_16 = 36
         const val ONE_UI_8 = 8
         /** Samsung encodes One UI N as 90000 + N * 10000 (One UI 8 -> 170000). */
         const val SEM_PLATFORM_BASE = 90_000

@@ -21,6 +21,22 @@ class Converters {
     @TypeConverter fun stringToMethod(value: String): PaymentMethod =
         runCatching { PaymentMethod.valueOf(value) }.getOrDefault(PaymentMethod.OTHER)
 
+    /**
+     * Nullable companions to the converters above.
+     *
+     * Room resolves converters by exact type, and the transaction search query
+     * takes a nullable type filter, so the non-null pair alone will not compile.
+     */
+    @TypeConverter fun nullableTypeToString(value: TransactionType?): String? = value?.name
+
+    @TypeConverter fun stringToNullableType(value: String?): TransactionType? =
+        value?.let { runCatching { TransactionType.valueOf(it) }.getOrNull() }
+
+    @TypeConverter fun nullableMethodToString(value: PaymentMethod?): String? = value?.name
+
+    @TypeConverter fun stringToNullableMethod(value: String?): PaymentMethod? =
+        value?.let { runCatching { PaymentMethod.valueOf(it) }.getOrNull() }
+
     @TypeConverter fun sourceToString(value: TransactionSource): String = value.name
     @TypeConverter fun stringToSource(value: String): TransactionSource =
         runCatching { TransactionSource.valueOf(value) }.getOrDefault(TransactionSource.MANUAL)
